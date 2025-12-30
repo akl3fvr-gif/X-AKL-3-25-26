@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>X AKL 3 - Website Kelas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>WELCOME TO X AKL 3</h1>
+    <p class="subtitle">"ISI-TEXT"</p>
+  </header>
+
+  <nav>
+    <ul class="nav-horizontal">
+      <li><a href="#" onclick="showPage('profil')">PROFIL</a></li>
+      <li><a href="#" onclick="showPage('agenda')">AGENDA</a></li>
+      <li><a href="#" onclick="showPage('feedback')">FEEDBACK</a></li>
+      <li><a href="#" onclick="showPage('contact')">CONTACT US!</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- PROFIL -->
+    <section id="profil" class="page">
+      <h2>Profil Kelas</h2>
+      <h3>Guru Wali Kelas</h3>
+      <div class="profile-card">
+        <img src="assets/guru.jpg" alt="Guru" />
+        <p>"ISI-TEXT" (Nama Guru)</p>
+      </div>
+
+      <h3>Daftar Siswa</h3>
+      <div class="siswa-grid" id="siswa-list">
+        <!-- Diisi oleh JavaScript -->
+      </div>
+    </section>
+
+    <!-- AGENDA -->
+    <section id="agenda" class="page hidden">
+      <h2>Agenda / Jadwal Pelajaran</h2>
+      <div class="jadwal">
+        <h3>SENIN</h3>
+        <ul>
+          <li>UPACARA</li>
+          <li>ETIKA PROFESI (3 jam)</li>
+          <li>ISTIRAHAT</li>
+          <li>IPAS (3 jam)</li>
+          <li>ISHOMA</li>
+          <li>SENI MUSIK (2 jam)</li>
+          <li>INFORMATIKA (2 jam)</li>
+        </ul>
+
+        <h3>SELASA</h3>
+        <ul>
+          <li>SPREADSHEET (4 jam)</li>
+          <li>ISTIRAHAT</li>
+          <li>IPAS (3 jam)</li>
+          <li>ISHOMA</li>
+          <li>PEND. PANCASILA (2 jam)</li>
+          <li>BAHASA INGGRIS (2 jam)</li>
+        </ul>
+
+        <h3>RABU</h3>
+        <ul>
+          <li>INFORMATIKA (2 jam)</li>
+          <li>BAHASA KOREA (2 jam)</li>
+          <li>ISTIRAHAT</li>
+          <li>MATEMATIKA (3 jam)</li>
+          <li>ISHOMA</li>
+          <li>MATEMATIKA</li>
+          <li>PEND. AGAMA ISLAM (3 jam)</li>
+        </ul>
+
+        <h3>KAMIS</h3>
+        <ul>
+          <li>BAHASA INDONESIA (4 jam)</li>
+          <li>ISTIRAHAT</li>
+          <li>BAHASA INGGRIS (2 jam)</li>
+          <li>DASAR-DASAR AKL 1 (1 jam)</li>
+          <li>ISHOMA</li>
+          <li>DASAR-DASAR AKL 1 (3 jam)</li>
+        </ul>
+
+        <h3>JUM'AT</h3>
+        <ul>
+          <li>PJOK (3 jam)</li>
+          <li>ISTIRAHAT</li>
+          <li>SEJARAH (2 jam)</li>
+        </ul>
+      </div>
+
+      <div class="reminder-section">
+        <h3>Reminder (Admin Only)</h3>
+        <form id="reminder-form">
+          <select id="mapel">
+            <option>ETIKA PROFESI</option>
+            <option>IPAS</option>
+            <option>SPREADSHEET</option>
+            <option>BAHASA INGGRIS</option>
+            <option>MATEMATIKA</option>
+            <option>INFORMATIKA</option>
+            <option>DASAR-DASAR AKL 1</option>
+            <option>PEND. PANCASILA</option>
+            <option>PEND. AGAMA ISLAM</option>
+            <option>BAHASA INDONESIA</option>
+            <option>BAHASA KOREA</option>
+            <option>SENI MUSIK</option>
+            <option>PJOK</option>
+            <option>SEJARAH</option>
+          </select>
+          <input type="text" id="deskripsi" placeholder="Deskripsi tugas" required />
+          <button type="submit">Tambah Reminder</button>
+        </form>
+        <ul id="reminder-list"></ul>
+      </div>
+
+      <div class="galeri-section">
+        <h3>Foto Kegiatan</h3>
+        <div class="galeri-grid" id="galeri-list">
+          <!-- Diisi dari folder assets -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FEEDBACK -->
+    <section id="feedback" class="page hidden">
+      <h2>Feedback</h2>
+      <p>Klik tautan berikut untuk mengisi formulir feedback:</p>
+      <a class="gform-link" href="https://forms.google.com/ISI-FORM-MU-DISINI" target="_blank">Buka Google Form</a>
+    </section>
+
+    <!-- CONTACT US -->
+    <section id="contact" class="page hidden">
+      <h2>Contact Us!</h2>
+      <p>Ikuti kami di Instagram:</p>
+      <a class="instagram-link" href="https://instagram.com/USERNAME-IG-MU" target="_blank">@USERNAME-IG-MU</a>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
