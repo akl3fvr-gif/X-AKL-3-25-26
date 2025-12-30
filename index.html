@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>X AKL 3 - Website Kelas</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header>
@@ -18,78 +18,40 @@
       <li><a href="#" onclick="showPage('agenda')">AGENDA</a></li>
       <li><a href="#" onclick="showPage('feedback')">FEEDBACK</a></li>
       <li><a href="#" onclick="showPage('contact')">CONTACT US!</a></li>
+      <li id="nav-login"><a href="#" onclick="showPage('login')">LOGIN</a></li>
+      <li id="nav-logout" class="hidden"><a href="#" onclick="logout()">LOGOUT</a></li>
     </ul>
   </nav>
 
   <main>
+    <!-- LOGIN -->
+    <section id="login" class="page">
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Username" required/>
+        <input type="password" id="password" placeholder="Password" required/>
+        <button type="submit">Masuk</button>
+      </form>
+      <button onclick="loginAsGuest()">Masuk sebagai Guest</button>
+    </section>
+
     <!-- PROFIL -->
-    <section id="profil" class="page">
+    <section id="profil" class="page hidden">
       <h2>Profil Kelas</h2>
       <h3>Guru Wali Kelas</h3>
       <div class="profile-card">
-        <img src="assets/guru.jpg" alt="Guru" />
-        <p>"ISI-TEXT" (Nama Guru)</p>
+        <img src="assets/guru.jpg" alt="Guru" onerror="this.src='assets/default.jpg'"/>
+        <p>Farita Nurmala S.Pd.</p>
       </div>
 
       <h3>Daftar Siswa</h3>
-      <div class="siswa-grid" id="siswa-list">
-        <!-- Diisi oleh JavaScript -->
-      </div>
+      <div class="siswa-grid" id="siswa-list"></div>
     </section>
 
     <!-- AGENDA -->
     <section id="agenda" class="page hidden">
       <h2>Agenda / Jadwal Pelajaran</h2>
-      <div class="jadwal">
-        <h3>SENIN</h3>
-        <ul>
-          <li>UPACARA</li>
-          <li>ETIKA PROFESI (3 jam)</li>
-          <li>ISTIRAHAT</li>
-          <li>IPAS (3 jam)</li>
-          <li>ISHOMA</li>
-          <li>SENI MUSIK (2 jam)</li>
-          <li>INFORMATIKA (2 jam)</li>
-        </ul>
-
-        <h3>SELASA</h3>
-        <ul>
-          <li>SPREADSHEET (4 jam)</li>
-          <li>ISTIRAHAT</li>
-          <li>IPAS (3 jam)</li>
-          <li>ISHOMA</li>
-          <li>PEND. PANCASILA (2 jam)</li>
-          <li>BAHASA INGGRIS (2 jam)</li>
-        </ul>
-
-        <h3>RABU</h3>
-        <ul>
-          <li>INFORMATIKA (2 jam)</li>
-          <li>BAHASA KOREA (2 jam)</li>
-          <li>ISTIRAHAT</li>
-          <li>MATEMATIKA (3 jam)</li>
-          <li>ISHOMA</li>
-          <li>MATEMATIKA</li>
-          <li>PEND. AGAMA ISLAM (3 jam)</li>
-        </ul>
-
-        <h3>KAMIS</h3>
-        <ul>
-          <li>BAHASA INDONESIA (4 jam)</li>
-          <li>ISTIRAHAT</li>
-          <li>BAHASA INGGRIS (2 jam)</li>
-          <li>DASAR-DASAR AKL 1 (1 jam)</li>
-          <li>ISHOMA</li>
-          <li>DASAR-DASAR AKL 1 (3 jam)</li>
-        </ul>
-
-        <h3>JUM'AT</h3>
-        <ul>
-          <li>PJOK (3 jam)</li>
-          <li>ISTIRAHAT</li>
-          <li>SEJARAH (2 jam)</li>
-        </ul>
-      </div>
+      <div class="jadwal" id="jadwal-content"></div>
 
       <div class="reminder-section">
         <h3>Reminder (Admin Only)</h3>
@@ -110,7 +72,15 @@
             <option>PJOK</option>
             <option>SEJARAH</option>
           </select>
-          <input type="text" id="deskripsi" placeholder="Deskripsi tugas" required />
+          <input type="text" id="deskripsi" placeholder="Deskripsi tugas" required/>
+          <label>
+            Ingatkan dalam:
+            <select id="waktu-reminder">
+              <option value="30">30 menit</option>
+              <option value="60">60 menit</option>
+              <option value="90">90 menit</option>
+            </select>
+          </label>
           <button type="submit">Tambah Reminder</button>
         </form>
         <ul id="reminder-list"></ul>
@@ -118,9 +88,7 @@
 
       <div class="galeri-section">
         <h3>Foto Kegiatan</h3>
-        <div class="galeri-grid" id="galeri-list">
-          <!-- Diisi dari folder assets -->
-        </div>
+        <div class="galeri-grid" id="galeri-list"></div>
       </div>
     </section>
 
@@ -131,7 +99,7 @@
       <a class="gform-link" href="https://forms.google.com/ISI-FORM-MU-DISINI" target="_blank">Buka Google Form</a>
     </section>
 
-    <!-- CONTACT US -->
+    <!-- CONTACT -->
     <section id="contact" class="page hidden">
       <h2>Contact Us!</h2>
       <p>Ikuti kami di Instagram:</p>
