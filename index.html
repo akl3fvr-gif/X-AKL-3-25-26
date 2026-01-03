@@ -3,23 +3,21 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>X AKL 3 - Website Kelas</title>
+  <title>X AKL 3 - Blog Kelas</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header>
-    <h1>WELCOME TO X AKL 3</h1>
-    <p class="subtitle">"ISI-TEXT"</p>
+    <h1>X AKL 3 Blog</h1>
+    <p>SMK Negeri 1 Kota Tangerang</p>
   </header>
 
   <nav>
     <ul class="nav-horizontal">
-      <li><a href="#" onclick="showPage('profil')">PROFIL</a></li>
-      <li><a href="#" onclick="showPage('agenda')">AGENDA</a></li>
-      <li><a href="#" onclick="showPage('feedback')">FEEDBACK</a></li>
-      <li><a href="#" onclick="showPage('contact')">CONTACT US!</a></li>
-      <li id="nav-login"><a href="#" onclick="showPage('login')">LOGIN</a></li>
-      <li id="nav-logout" class="hidden"><a href="#" onclick="logout()">LOGOUT</a></li>
+      <li><a href="#" onclick="showPage('home')">Home</a></li>
+      <li><a href="#" onclick="showPage('profil')">Profil</a></li>
+      <li id="nav-login"><a href="#" onclick="showPage('login')">Login</a></li>
+      <li id="nav-logout" class="hidden"><a href="#" onclick="logout()">Logout</a></li>
     </ul>
   </nav>
 
@@ -35,6 +33,22 @@
       <button onclick="loginAsGuest()">Masuk sebagai Guest</button>
     </section>
 
+    <!-- HOME / BLOG -->
+    <section id="home" class="page hidden">
+      <h2>Blog Kelas</h2>
+      <div id="post-form-container" class="hidden">
+        <h3>Buat/Edit Post</h3>
+        <form id="post-form">
+          <input type="hidden" id="post-id"/>
+          <input type="text" id="post-title" placeholder="Judul" required/>
+          <textarea id="post-body" placeholder="Isi post" required></textarea>
+          <button type="submit">Publish</button>
+          <button type="button" onclick="cancelEdit()">Batal</button>
+        </form>
+      </div>
+      <div id="posts-list"></div>
+    </section>
+
     <!-- PROFIL -->
     <section id="profil" class="page hidden">
       <h2>Profil Kelas</h2>
@@ -43,67 +57,8 @@
         <img src="assets/guru.jpg" alt="Guru" onerror="this.src='assets/default.jpg'"/>
         <p>Farita Nurmala S.Pd.</p>
       </div>
-
-      <h3>Daftar Siswa</h3>
+      <h3>Anggota Kelas</h3>
       <div class="siswa-grid" id="siswa-list"></div>
-    </section>
-
-    <!-- AGENDA -->
-    <section id="agenda" class="page hidden">
-      <h2>Agenda / Jadwal Pelajaran</h2>
-      <div class="jadwal" id="jadwal-content"></div>
-
-      <div class="reminder-section">
-        <h3>Reminder (Admin Only)</h3>
-        <form id="reminder-form">
-          <select id="mapel">
-            <option>ETIKA PROFESI</option>
-            <option>IPAS</option>
-            <option>SPREADSHEET</option>
-            <option>BAHASA INGGRIS</option>
-            <option>MATEMATIKA</option>
-            <option>INFORMATIKA</option>
-            <option>DASAR-DASAR AKL 1</option>
-            <option>PEND. PANCASILA</option>
-            <option>PEND. AGAMA ISLAM</option>
-            <option>BAHASA INDONESIA</option>
-            <option>BAHASA KOREA</option>
-            <option>SENI MUSIK</option>
-            <option>PJOK</option>
-            <option>SEJARAH</option>
-          </select>
-          <input type="text" id="deskripsi" placeholder="Deskripsi tugas" required/>
-          <label>
-            Ingatkan dalam:
-            <select id="waktu-reminder">
-              <option value="30">30 menit</option>
-              <option value="60">60 menit</option>
-              <option value="90">90 menit</option>
-            </select>
-          </label>
-          <button type="submit">Tambah Reminder</button>
-        </form>
-        <ul id="reminder-list"></ul>
-      </div>
-
-      <div class="galeri-section">
-        <h3>Foto Kegiatan</h3>
-        <div class="galeri-grid" id="galeri-list"></div>
-      </div>
-    </section>
-
-    <!-- FEEDBACK -->
-    <section id="feedback" class="page hidden">
-      <h2>Feedback</h2>
-      <p>Klik tautan berikut untuk mengisi formulir feedback:</p>
-      <a class="gform-link" href="https://forms.google.com/ISI-FORM-MU-DISINI" target="_blank">Buka Google Form</a>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="page hidden">
-      <h2>Contact Us!</h2>
-      <p>Ikuti kami di Instagram:</p>
-      <a class="instagram-link" href="https://instagram.com/USERNAME-IG-MU" target="_blank">@USERNAME-IG-MU</a>
     </section>
   </main>
 
