@@ -1,146 +1,40 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #2c0d0d;
-  color: #f2e6e6;
+:root{
+  --bg:#1a0505;
+  --surface:#2c0d0d;
+  --primary:#732626;
+  --accent:#d9a6a6;
+  --text:#f2e6e6;
 }
 
-header {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #5a1d1d;
-}
+body{margin:0;font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--text);}
+header{text-align:center;padding:30px 20px;background:var(--surface);}
+header h1{font-size:2.5em;color:var(--accent);}
+nav{background:var(--primary);padding:15px;}
+.nav-horizontal{list-style:none;display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
+.nav-horizontal a{color:var(--text);text-decoration:none;font-weight:bold;padding:8px 16px;background:var(--surface);border-radius:4px;transition:.3s;}
+.nav-horizontal a:hover{background:var(--accent);color:var(--bg);}
+.page{padding:30px 20px;max-width:900px;margin:auto;}
+.hidden{display:none;}
 
-header h1 {
-  font-size: 3em;
-  color: #d9a6a6;
-}
+#posts-list{display:grid;gap:20px;}
+.post-card{background:var(--surface);padding:20px;border-radius:8px;}
+.post-header{display:flex;justify-content:space-between;align-items:center;}
+.post-title{font-size:1.3em;color:var(--accent);}
+.post-meta{font-size:.85em;color:#aaa;}
+.post-actions{display:flex;gap:10px;margin-top:10px;}
+.post-actions button{padding:6px 12px;background:var(--primary);border:none;color:var(--text);border-radius:4px;cursor:pointer;}
+.post-actions button:hover{background:var(--accent);color:var(--bg);}
 
-.subtitle {
-  font-style: italic;
-  margin-top: 10px;
-  color: #ccc;
-}
+#post-form-container{background:var(--surface);padding:20px;border-radius:8px;margin-bottom:20px;}
+#post-form{display:flex;flex-direction:gap:10px;}
+#post-form input,#post-form textarea{width:100%;padding:10px;margin-bottom:10px;border:none;border-radius:4px;background:#3d1212;color:var(--text);}
+#post-form button{margin-right:10px;}
 
-nav {
-  background-color: #732626;
-  padding: 15px;
-}
+.comments{margin-top:15px;background:#3d1212;padding:10px;border-radius:4px;}
+.comment-item{margin-bottom:8px;font-size:.9em;}
 
-.nav-horizontal {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.nav-horizontal li a {
-  color: #f2e6e6;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 10px 15px;
-  background-color: #5a1d1d;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.nav-horizontal li a:hover {
-  background-color: #8a3434;
-}
-
-.page {
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.hidden {
-  display: none;
-}
-
-.profile-card {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 30px;
-}
-
-.profile-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 10px;
-  background-color: #ccc;
-}
-
-.siswa-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.siswa-card {
-  background-color: #732626;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  width: 120px;
-}
-
-.siswa-card img {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 5px;
-  background-color: #ccc;
-}
-
-.jadwal h3 {
-  margin-top: 20px;
-  color: #d9a6a6;
-}
-
-.jadwal ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.jadwal li {
-  background-color: #5a1d1d;
-  margin: 5px 0;
-  padding: 10px;
-  border-radius: 4px;
-}
-
-.reminder-section, .galeri-section {
-  margin-top: 40px;
-}
-
-#galeri-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.galeri-item {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 5px;
-  background-color: #ccc;
-}
-
-.gform-link, .instagram-link {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #a63f3f;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.gform-link:hover, .instagram-link:hover {
-  background-color: #8a3434;
-}
+.siswa-grid{display:flex;flex-wrap:wrap;gap:15px;}
+.siswa-card{background:var(--surface);padding:10px;border-radius:6px;text-align:center;width:120px;}
+.siswa-card img{width:100%;height:100px;object-fit:cover;border-radius:4px;background:#ccc;}
+.profile-card{display:flex;align-items:center;gap:15px;margin-bottom:20px;}
+.profile-card img{width:100px;height:100px;object-fit:cover;border-radius:50%;background:#ccc;}
